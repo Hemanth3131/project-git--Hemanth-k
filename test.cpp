@@ -1,9 +1,5 @@
-// car.h
-#ifndef CAR_H
-#define CAR_H
-
-#include <string>
 #include <iostream>
+#include <string>
 
 class Car {
 private:
@@ -15,55 +11,22 @@ private:
     bool isEngineRunning;
 
 public:
-    // Constructor
-    Car(std::string make, std::string model, int year, std::string color);
+    Car(std::string carMake, std::string carModel, int carYear, std::string carColor)
+        : make(carMake), model(carModel), year(carYear), color(carColor),
+          mileage(0.0), isEngineRunning(false) {
+        std::cout << "Car object created: " << this->year << " "
+                  << this->make << " " << this->model << std::endl;
+    }
 
-    // Destructor (simple, for demonstration)
-    ~Car();
+    ~Car() {
+        std::cout << "Car object destroyed: " << this->year << " "
+                  << this->make << " " << this->model << std::endl;
+    }
 
-    // Getters
-    std::string getMake() const;
-    std::string getModel() const;
-    int getYear() const;
-    std::string getColor() const;
-    double getMileage() const;
-    bool getIsEngineRunning() const;
+    std::string getMake() const { return make; }
+    std::string getModel() const { return model; }
+    int getYear() const { return year; }
+    std::string getColor() const { return color; }
+    double getMileage() const { return mileage; }
+    bool getIsEngineRunning() const { return isEngineRunning; }
 };
-
-#endif // CAR_H
-
-// car.cpp (implementation file for Car class)
-#include "car.h"
-
-Car::Car(std::string make, std::string model, int year, std::string color)
-    : make(make), model(model), year(year), color(color), mileage(0.0), isEngineRunning(false) {
-    std::cout << "Car object created: " << this->year << " " << this->make << " " << this->model << std::endl;
-}
-
-Car::~Car() {
-    std::cout << "Car object destroyed: " << this->year << " " << this->make << " " << this->model << std::endl;
-}
-
-std::string Car::getMake() const {
-    return make;
-}
-
-std::string Car::getModel() const {
-    return model;
-}
-
-int Car::getYear() const {
-    return year;
-}
-
-std::string Car::getColor() const {
-    return color;
-}
-
-double Car::getMileage() const {
-    return mileage;
-}
-
-bool Car::getIsEngineRunning() const {
-    return isEngineRunning;
-}
