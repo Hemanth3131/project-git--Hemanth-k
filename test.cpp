@@ -30,8 +30,7 @@ public:
     double getMileage() const { return mileage; }
     bool getIsEngineRunning() const { return isEngineRunning; }
 };
-#include <iostream>
-#include <string>
+
 
 class Car {
 private:
@@ -85,8 +84,6 @@ public:
         }
     }
 };
-#include <iostream>
-#include <string>
 
 class Car {
 private:
@@ -127,7 +124,19 @@ public:
         if (isEngineRunning) {
             isEngineRunning = false; std::cout << "Engine stopped for " << make << " " << model << std::endl;
         } else { std::cout << "Engine is already off for " << make << " " << model << std::endl; }
-    }
-
-   
+    }   
 };
+
+// Car class definition from previous commits (assumed to be here)
+
+int main() {
+    std::cout << "--- Starting Car Demos ---" << std::endl;
+    Car myCar("Tesla", "Model 3", 2023, "White");
+    myCar.startEngine();
+    myCar.drive(80.0);
+    myCar.setColor("Black");
+    std::cout << "Current mileage: " << myCar.getMileage() << std::endl;
+    myCar.stopEngine();
+    std::cout << "--- Demos End ---" << std::endl;
+    return 0;
+}
