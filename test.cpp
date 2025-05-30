@@ -13,7 +13,7 @@ private:
 public:
     Car(std::string carMake, std::string carModel, int carYear, std::string carColor)
         : make(carMake), model(carModel), year(carYear), color(carColor),
-          mileage(0.0), isEngineRunning(false) {
+          mileage(0.0), isEngi9999999699+neRunning(false) {
         std::cout << "Car object created: " << this->year << " "
                   << this->make << " " << this->model << std::endl;
     }
@@ -29,6 +29,38 @@ public:
     std::string getColor() const { return color; }
     double getMileage() const { return mileage; }
     bool getIsEngineRunning() const { return isEngineRunning; }
+
+    void setColor(std::string newColor) {
+        this->color = newColor;
+        std::cout << "Car color changed to: " << this->color << std::endl;
+    }
+
+    void startEngine() {
+        if (!isEngineRunning) {
+            isEngineRunning = true;
+            std::cout << "Engine started for " << make << " " << model << std::endl;
+        } else {
+            std::cout << "Engine is already running for " << make << " " << model << std::endl;
+        }
+    }
+
+    void stopEngine() {
+        if (isEngineRunning) {
+            isEngineRunning = false;
+            std::cout << "Engine stopped for " << make << " " << model << std::endl;
+        } else {
+            std::cout << "Engine is already off for " << make << " " << model << std::endl;
+        }
+    }
+
+    void drive(double distance) {
+        if (isEngineRunning) {
+            mileage += distance;
+            std::cout << "Drove " << distance << " miles. Total mileage: " << mileage << std::endl;
+        } else {
+            std::cout << "Start the engine before driving." << std::endl;
+        }
+    }
 };
 
 
