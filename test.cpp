@@ -1,7 +1,5 @@
 #include <iostream>
-#include <string>
-
-class Car {
+#include <string>class Car {
 private:
     std::string make;
     std::string model;
@@ -40,16 +38,8 @@ public:
             isEngineRunning = true;
             std::cout << "Engine started for " << make << " " << model << std::endl;
         } else {
-            std::cout << "Engine is already running for " << make << " " << model << std::endl;
-        }
-    }
 
-    void stopEngine() {
-        if (isEngineRunning) {
-            isEngineRunning = false;
-            std::cout << "Engine stopped for " << make << " " << model << std::endl;
-        } else {
-            std::cout << "Engine is already off for " << make << " " << model << std::endl;
+		 std::cout << "Engine is already off for " << make << " " << model << std::endl;
         }
     }
 
@@ -61,7 +51,7 @@ public:
             std::cout << "Start the engine before driving." << std::endl;
         }
     }
-}  ;
+};
 
 
 class Car {
