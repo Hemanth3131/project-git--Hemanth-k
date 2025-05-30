@@ -61,7 +61,7 @@ public:
             std::cout << "Start the engine before driving." << std::endl;
         }
     }
-};
+}  ;
 
 
 class Car {
