@@ -75,14 +75,14 @@ public:
         }
     }
 
-    void stopEngine() {
-        if (isEngineRunning) {
-            isEngineRunning = false;
-            std::cout << "Engine stopped for " << make << " " << model << std::endl;
-        } else {
-            std::cout << "Engine is already off for " << make << " " << model << std::endl;
-        }
-    }
+    void drive(double distance) {
+    if (isEngineRunning) {
+        mileage += distance;
+        std::cout << "Drove " << distance << " miles. Total mileage: " << mileage << std::endl;
+    } else {
+        std::cout << "Start the engine before driving." << std::endl;
+    }
+}
 };
 
 class Car {
